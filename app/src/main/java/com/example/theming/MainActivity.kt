@@ -5,7 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -38,7 +40,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Themeing() {
     Scaffold(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(10.dp),
         topBar = {
             TopAppBar(
@@ -60,9 +63,13 @@ fun Themeing() {
 
         },
         content = { paddingValues -> paddingValues
-            Box(modifier = Modifier
-                .padding(10.dp)
-                .fillMaxSize())
+            Column(modifier = Modifier
+                .padding(10.dp))
+            {
+                Text(text = "Wassup everyone",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = Color.Black)
+            }
 
         }
     )
